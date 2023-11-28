@@ -4,7 +4,7 @@
  *            All Rights Reserved.
  */
 
-import { FCommand, FCommandDetails, FCommandNoun, FCommandPrompts, FCommandVerb } from "./Commands.Types";
+import { FCommand, FCommandDetails, FCommandNoun, FCommandVerb } from "./Commands.Types";
 import { Command } from "commander";
 
 export const DeclareCommands = () =>
