@@ -1,0 +1,17 @@
+{
+	"Copyright":
+	{
+        "body":
+        [
+            "/* File:      $TM_FILENAME",
+	        " * Author:    Gage Sorrell <gage@sorrell.sh>",
+	        " * Copyright: (c) $CURRENT_YEAR Gage Sorrell.",
+	        " *            All Rights Reserved.",
+            " */",
+            "\n"
+        ],
+		"description": "Adds the copyright header for TS files.",
+        "prefix": "CopyrightHeader",
+		"scope": "typescript"
+	}
+}

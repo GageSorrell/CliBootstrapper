@@ -1,0 +1,10 @@
+.persistent
+node_modules
+CommandletProvider/.vs
+CommandletProvider/Binaries
+CommandletProvider/DerivedDataCache
+CommandletProvider/Intermediate
+CommandletProvider/Saved
+Distribution
+.terraform*
+terraform*
