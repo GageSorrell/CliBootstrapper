@@ -11,6 +11,7 @@
     "target": "ES2020",
     "module": "ES2020",
     "moduleResolution": "node",
+    "sourceRoot": "Source",
     "sourceMap": true,
     "outDir": "./Distribution",
     "allowSyntheticDefaultImports": true,
@@ -19,8 +20,8 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["Source/**/*"],
-  "exclude": ["node_modules", "Distribution"],
+  "include": ["Source/**/*", "Source/Settings"],
+  "exclude": ["node_modules", "Distribution", "Old/**/*"],
   "tsc-alias": {
     "resolveFullPaths": true,
     "replacers": {
