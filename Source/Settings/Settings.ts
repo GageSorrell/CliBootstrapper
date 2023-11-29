@@ -86,14 +86,14 @@ export const GetSettingOrPrompt = async <T extends FSettingsBase>(Setting: keyof
     }
 };
 
-export const GetSetting = async <T extends FSettingsBase, TKey extends keyof T>(Setting: TKey): Promise<T[TKey] | undefined> =>
+export const GetSetting = async <T extends FSettingsBase>(Setting: keyof T): Promise<T[keyof T] | undefined> =>
 {
     await InitializeSettingsStore();
 
-    return Store.getItem(Setting as string) as Promise<T[TKey] | undefined>;
+    return Store.getItem(Setting as string) as Promise<T[keyof T] | undefined>;
 };
 
-export const SetSetting = async <T extends FSettingsBase, TKey extends keyof T>(Setting: TKey, Value: T[TKey]): Promise<Storage.WriteFileResult> =>
+export const SetSetting = async <T extends FSettingsBase>(Setting: keyof T, Value: T[keyof T]): Promise<Storage.WriteFileResult> =>
 {
     await InitializeSettingsStore();
 

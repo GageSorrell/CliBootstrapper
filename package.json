@@ -1,6 +1,6 @@
 {
     "name": "@sorrell/cli-bootstrapper",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "The command-line tool for bootstrapping a new feature to Sanctifi.",
     "main": "index.js",
     "scripts": {
