@@ -1,1 +1,1 @@
-import { Main } from "./Distribution/index.js";
+export * from "./Distribution/index.js";
