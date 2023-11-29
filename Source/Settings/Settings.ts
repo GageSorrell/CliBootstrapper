@@ -61,24 +61,24 @@ export const GetAllSettings = async <T extends FSettingsBase>(): Promise<Partial
     });
 };
 
-export const GetSettingOrPrompt = async <T extends FSettingsBase, TKey extends keyof T>(Setting: TKey, SettingPrompts: TPrompt<T>): Promise<T[TKey]> =>
+export const GetSettingOrPrompt = async <T extends FSettingsBase>(Setting: keyof T, SettingPrompts: TPrompt<T>): Promise<T[keyof T]> =>
 {
     await InitializeSettingsStore();
 
-    const OutSetting: T[TKey] | undefined = await (Store.getItem(Setting as string) as Promise<T[TKey] | undefined>);
+    const OutSetting: T[keyof T] | undefined = await (Store.getItem(Setting as string) as Promise<T[keyof T] | undefined>);
 
     if (OutSetting === undefined)
     {
         Object.keys(SettingPrompts).forEach((InKey: string): void =>
         {
-            const Key: TKey = InKey as TKey;
+            const Key: keyof T = InKey as keyof T;
             if (Key !== Setting)
             {
                 delete SettingPrompts[Key];
             }
         });
 
-        return ((await PromptUser(SettingPrompts)) as { [Index in TKey]: T[TKey] })[Setting];
+        return ((await PromptUser(SettingPrompts)) as { [Index in keyof T]: T[keyof T] })[Setting];
     }
     else
     {
