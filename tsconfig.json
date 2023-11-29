@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "plugins": [
       {
         "transform": "ts-macros"
